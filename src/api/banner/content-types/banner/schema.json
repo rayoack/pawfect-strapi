@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banners",
+  "info": {
+    "singularName": "banner",
+    "pluralName": "banners",
+    "displayName": "Banner",
+    "description": "Homepage and promotional banners"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150
+    },
+    "subtitulo": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "textoDestaque": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "link": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "imagemDesktop": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "imagemMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "posicao": {
+      "type": "enumeration",
+      "enum": ["hero", "promotional", "secondary"],
+      "required": true
+    },
+    "ordem": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "dataInicio": {
+      "type": "date"
+    },
+    "dataFim": {
+      "type": "date"
+    }
+  }
+}

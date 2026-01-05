@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Products for the pet store"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "descricaoCurta": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "descricaoLonga": {
+      "type": "richtext",
+      "required": true
+    },
+    "sku": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 50
+    },
+    "preco": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "precoPromocional": {
+      "type": "decimal",
+      "min": 0
+    },
+    "emPromocao": {
+      "type": "boolean",
+      "default": false
+    },
+    "novoLancamento": {
+      "type": "boolean",
+      "default": false
+    },
+    "estoque": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "vendidos": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "cores": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.color"
+    },
+    "tamanhos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.size"
+    },
+    "imagens": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "produtos"
+    },
+    "vitrines": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::showcase.showcase",
+      "mappedBy": "produtos"
+    }
+  }
+}

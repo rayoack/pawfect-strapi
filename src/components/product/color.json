@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_product_colors",
+  "info": {
+    "displayName": "Color",
+    "icon": "palette",
+    "description": "Color options for products"
+  },
+  "options": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "codigoHex": {
+      "type": "string",
+      "required": true,
+      "regex": "^#[0-9A-Fa-f]{6}$"
+    },
+    "imagemCor": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

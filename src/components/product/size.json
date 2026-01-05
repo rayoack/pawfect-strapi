@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_product_sizes",
+  "info": {
+    "displayName": "Size",
+    "icon": "ruler",
+    "description": "Size options for products"
+  },
+  "options": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "disponivel": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "showcases",
+  "info": {
+    "singularName": "showcase",
+    "pluralName": "showcases",
+    "displayName": "Showcase",
+    "description": "Product showcases/vitrines for homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150
+    },
+    "identificador": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 100
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": ["manual", "automatic"],
+      "required": true
+    },
+    "criterioAutomatico": {
+      "type": "json"
+    },
+    "ordem": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "limite": {
+      "type": "integer",
+      "default": 8,
+      "min": 1,
+      "max": 50
+    },
+    "ativa": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "produtos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "vitrines"
+    }
+  }
+}
